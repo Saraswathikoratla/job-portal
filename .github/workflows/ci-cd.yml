@@ -7,7 +7,6 @@ on:
 
 jobs:
   frontend:
-
     runs-on: ubuntu-latest
 
     defaults:
@@ -26,8 +25,17 @@ jobs:
       - run: npm run build
 
   backend:
-
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: jobboard
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
 
     defaults:
       run:
