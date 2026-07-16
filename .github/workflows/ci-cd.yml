@@ -31,7 +31,7 @@ jobs:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_DB: jobboard
+          POSTGRES_DB: job_board
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
