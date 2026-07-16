@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { FiltersType } from "@/types/Filters";
 
 type FiltersProps = {
-  onApplyFilters: (
-    location: string,
-    experience?: number,
-    salary?: number
-  ) => void;
+  setFilters: React.Dispatch<
+    React.SetStateAction<FiltersType>
+  >;
 };
 
-const Filters = ({ onApplyFilters }: FiltersProps) => {
+const Filters = ({ setFilters }: FiltersProps) => {
   const [location, setLocation] = useState("");
   const [experience, setExperience] = useState<number>();
   const [salary, setSalary] = useState<number>();
@@ -71,13 +70,13 @@ const Filters = ({ onApplyFilters }: FiltersProps) => {
         </div>
 
         <button
-          onClick={() =>
-            onApplyFilters(
-              location,
-              experience,
-              salary
-            )
-          }
+         onClick={() =>
+    setFilters({
+      location,
+      experience,
+      salary,
+    })
+  }
           className="w-full rounded-md bg-blue-600 py-2 text-white"
         >
           Apply Filters

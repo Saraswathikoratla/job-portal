@@ -11,10 +11,15 @@ import {
 import toast from "react-hot-toast";
 
 export default function EditJobPage() {
-  const params = useParams();
+
   const router = useRouter();
 
-  const id = Number(params.id);
+
+const params = useParams();
+
+const id = Array.isArray(params?.id)
+  ? Number(params.id[0])
+  : Number(params?.id);
 
   const [job, setJob] = useState({
     title: "",
