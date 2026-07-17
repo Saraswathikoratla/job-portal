@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/auth";
+const API_URL = "https://job-portal-1-re7b.onrender.com/api/auth";
 
 export const register = async (
   name: string,

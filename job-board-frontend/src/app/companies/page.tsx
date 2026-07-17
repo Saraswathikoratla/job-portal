@@ -8,7 +8,7 @@ export default function CompaniesPage() {
   useEffect(() => {
     const fetchCompanies = async () => {
       const response = await fetch(
-        "http://localhost:8080/api/jobs/companies"
+        "https://job-portal-1-re7b.onrender.com/api/jobs/companies"
       );
 
       const data = await response.json();

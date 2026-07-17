@@ -10,7 +10,7 @@ export default function MyApplicationsPage() {
       const userId = localStorage.getItem("userId");
 
       const response = await fetch(
-        `http://localhost:8080/api/applications/user/${userId}`
+        `https://job-portal-1-re7b.onrender.com/api/applications/user/${userId}`
       );
 
       const data = await response.json();

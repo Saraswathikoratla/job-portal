@@ -1,7 +1,7 @@
 import { Job } from "@/types/Job";
 import { JobRequest } from "@/types/JobRequest";
 
-const API_URL = "http://localhost:8080/api/jobs";
+const API_URL = "https://job-portal-1-re7b.onrender.com/api/jobs";
 
 export const getJobs = async (): Promise<Job[]> => {
   const response = await fetch(API_URL);
@@ -27,7 +27,7 @@ export const searchJobs = async (
   if (salary) params.append("salary", salary.toString());
 
   const response = await fetch(
-    `http://localhost:8080/api/jobs?${params.toString()}`
+    `https://job-portal-1-re7b.onrender.com/api/jobs?${params.toString()}`
   );
 
   return response.json();
@@ -38,7 +38,7 @@ export const applyJob = async (
 ) => {
 
   const response = await fetch(
-    "http://localhost:8080/api/applications",
+    "https://job-portal-1-re7b.onrender.com/api/applications",
     {
       method: "POST",
       headers: {
@@ -55,7 +55,7 @@ export const applyJob = async (
 };
 export const createJob = async (job: JobRequest) => {
   const response = await fetch(
-    "http://localhost:8080/api/jobs",
+    "https://job-portal-1-re7b.onrender.com/api/jobs",
     {
       method: "POST",
       headers: {
@@ -70,7 +70,7 @@ export const createJob = async (job: JobRequest) => {
 
 export const getJobById = async (id: number) => {
   const response = await fetch(
-    `http://localhost:8080/api/jobs/${id}`
+    `https://job-portal-1-re7b.onrender.com/api/jobs/${id}`
   );
 
   return response.json();
@@ -81,7 +81,7 @@ export const updateJob = async (
   job: JobRequest
 ) => {
   const response = await fetch(
-    `http://localhost:8080/api/jobs/${id}`,
+    `https://job-portal-1-re7b.onrender.com/api/jobs/${id}`,
     {
       method: "PUT",
       headers: {
@@ -96,7 +96,7 @@ export const updateJob = async (
 
 export const deleteJob = async (id: number) => {
   await fetch(
-    `http://localhost:8080/api/jobs/${id}`,
+    `https://job-portal-1-re7b.onrender.com/api/jobs/${id}`,
     {
       method: "DELETE",
     }
