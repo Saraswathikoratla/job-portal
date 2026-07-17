@@ -46,6 +46,11 @@ jobs:
       run:
         working-directory: jobboard
 
+    env:
+      DATABASE_URL: jdbc:postgresql://localhost:5432/job_board
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+
     steps:
       - uses: actions/checkout@v4
 
