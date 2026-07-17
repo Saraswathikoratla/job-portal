@@ -20,7 +20,7 @@ public class CorsConfig {
 
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "http://localhost:3000"
+                                "https://job-portal-frontend-five-alpha.vercel.app"
                         )
                         .allowedMethods(
                                 "*"
